@@ -1,0 +1,15 @@
+Enter your Salon details
+<%= form_for @salon_instance do |t| %>
+    Name   <%= t.text_field :name %><br/>
+    Opens At   <%= t.text_field :opening_time %><br/>
+    Closes At  <%= t.text_field :closing_time %><br/>
+    <%= t.submit %>
+<%end%>
+
+Display all Salons
+<% if !@salons.blank? %>
+  <% for salon in @salons %>
+    <%= salon.name %>
+    <%= salon.opening_time %><br/>
+  <% end %>
+<% end %>
